@@ -7,6 +7,7 @@ from sklearn.pipeline import make_pipeline
 from sklearn.model_selection import train_test_split
 
 """
+Zadanie 4:
 Utwórz skrypt w Pythonie, który wykorzystuje regresję wielomianową z scikit-learn do
 modelowania zależności nieliniowych między zmiennymi miesięcy i tempreratury. Dopa-
 Metody i narzędzia Big Data
@@ -53,12 +54,18 @@ y_pred = model.predict(X_test)
 # wykresy
 fig, ax = plt.subplots(3)
 ax[0].scatter(X_test, y_test, color='black')
+ax[0].set_xlabel("Month")
+ax[0].set_ylabel("Temperature")
 ax[0].set_title("Wykres zależności między Month a Temperature")
 
 ax[1].scatter(X_test, y_pred, color='red')
+ax[1].set_xlabel("Month")
+ax[1].set_ylabel("Temperature")
 ax[1].set_title("Wykres zależności między Month a predykowaną Temperature")
 
 ax[2].scatter(df['month'], df['temperature'], color='orange')
+ax[2].set_xlabel("Month")
+ax[2].set_ylabel("Temperature")
 ax[2].set_title("Wykres zależności między Month a Temperature")
 
 plt.tight_layout()

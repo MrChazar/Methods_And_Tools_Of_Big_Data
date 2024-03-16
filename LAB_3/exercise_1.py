@@ -50,15 +50,14 @@ print(y_test.shape)
 fig, ax = plt.subplots(2)
 a_test = X_test['area'].values
 
-# Znormalizuj a_test oraz y_pred i y_test
-a_test = (a_test - a_test.mean()) / a_test.std()
-y_pred = (y_pred - y_pred.mean()) / y_pred.std()
-y_test = (y_test - y_test.mean()) / y_test.std()
-
 ax[0].scatter(a_test, y_pred)
+ax[0].set_xlabel("Area")
+ax[0].set_ylabel("Price")
 ax[0].set_title("Wykres zależności między Area a predykowaną Price")
 
 ax[1].scatter(a_test, y_test)
+ax[1].set_xlabel("Area")
+ax[1].set_ylabel("Price")
 ax[1].set_title("Wykres zależności między Area a rzeczywistymi Price")
 
 plt.tight_layout()
